@@ -21,7 +21,6 @@ class scope_guard
 		{
 			if(!dismissed)
 			{
-				std::cout << "thread guard running\n";
 				func();
 			}
 		}
