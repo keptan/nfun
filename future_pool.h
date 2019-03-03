@@ -147,6 +147,14 @@ public:
 		for(auto& t: workers) if(t.joinable()) t.join();
 	}
 
+	void clear (void)
+	{
+		std::scoped_lock(m);
+		while(!tasks.empty()) tasks.pop();
+	}
+
+
+
 	~FutureDad (void)
 	{
 		join_finish();
